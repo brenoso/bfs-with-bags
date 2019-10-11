@@ -7,41 +7,37 @@ from collections import defaultdict
 # using adjacency list representation 
 class Graph: 
   
-    # Constructor 
+    # Construtor
     def __init__(self): 
   
-        # default dictionary to store graph 
+        # dicionario default para armazenar o grafo
         self.graph = defaultdict(list) 
   
-    # function to add an edge to graph 
+    # função que adiciona um vértice no grafo
     def addEdge(self,u,v): 
         self.graph[u].append(v) 
   
-    # Function to print a BFS of graph 
+    #Funcao de busca em largura que imprime os nós visitados
     def BFS(self, s): 
   
-        # Mark all the vertices as not visited 
+        # marcar todos os vértices como não visitados
         visited = [False] * (len(self.graph)) 
   
-        # Create a queue for BFS 
+        # Criar uma fila para a busca em largura
         queue = [] 
   
-        # Mark the source node as  
-        # visited and enqueue it 
+        #Marca o primeiro nó como visitado e o enfilera 
         queue.append(s) 
         visited[s] = True
   
         while queue: 
   
-            # Dequeue a vertex from  
-            # queue and print it 
+            #Desenfileira um nó e imprime o mesmo
             s = queue.pop(0) 
             print (s)
-  
-            # Get all adjacent vertices of the 
-            # dequeued vertex s. If a adjacent 
-            # has not been visited, then mark it 
-            # visited and enqueue it 
+
+            ##pegar todas as vizinhaças do vertice que foi desinfileirado. Se algum vizinho não foi visitado
+            # marque como visitado e enfileira o mesmo
             for i in self.graph[s]: 
                 if visited[i] == False: 
                     queue.append(i) 
