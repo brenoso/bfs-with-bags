@@ -1,10 +1,7 @@
-# Python3 Program to print BFS traversal 
-# from a given source vertex. BFS(int s) 
-# traverses vertices reachable from s. 
 from collections import defaultdict 
   
-# This class represents a directed graph 
-# using adjacency list representation 
+# Representacao de um grafo direcionado
+# usando representaç~~ao de lista de adjacencias
 class Graph: 
   
     # Construtor
